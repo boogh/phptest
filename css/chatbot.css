@@ -42,7 +42,7 @@
 .inputbox{
     outline:none;
     width:98%;
-    height:98px;
-    position:fixed;
+    height:30px;
+    position: fixed;
     bottom:25px;
 }

@@ -12,24 +12,29 @@
 
 </head>
 <body>
-<div class="container">
-<div class="row"> <div class="topstrip" id="topstrip">Powered by <a href="https://www.pwc.de/" style="color:#d3d3d3">PwC.DE</a>&nbsp;&nbsp;&nbsp;</div></div>
-<div class="row"> 
-        <div class="topbar" id="chat-text">
-    </div> 
+<div class="container-fluid">  
+    <div class= "row">
+     <div class="topstrip col-sm-12" id="topstrip">Powered by <a href="https://www.pwc.de/" style="color:#d3d3d3">PwC.DE</a>&nbsp;&nbsp;&nbsp;</div>
     </div>
-<div class="row">
-    <form>
-    <span style="width:100%;">
-        <input class="inputbox"
-               placeholder="Write something and press Enter..." id="message" name="date" value="">
-    </span>
-    <input name="submit" type="hidden" value="Submit">
-    </form>
-
+    
+    <div class= "row" data-spy= "scroll">
+             <div class="col-sm-12" > 
+                <div class="topbar " id="chat-text">
+                </div> 
+             </div>
+     </div>
+    
+     <div class= "row">
+         <div class "col-sm-12 "> 
+              <form>
+                 <span style="width:100%;">
+                 <input class="inputbox" 
+                  placeholder="Write something and press Enter..." id="message" name="date" value="">
+                  </span>
+                 <input name="submit" type="hidden" value="Submit">
+                </form>
+         </div>
+   </div>
  </div>
-   
-   
-</div>
 </body>
 </html>
