@@ -139,6 +139,21 @@ function ajaxCall(query) {
 
 
                     }
+                    var butDiv;
+                    if(messages[i].type == "suggestion_chips") {
+                       butDiv = $("<div></div>").addClass("col-xs-6 col-xs-offset-3 pull-right");
+                      $.each(messages[i].suggestions , function(index , value) {
+
+                        butDiv.append($("<button></button>")
+                         .addClass("btn btn-md btn-success")
+                         .text(value.title)
+                         .click(function(){
+                          console.log($(this).text());
+                          showUserText2($(this).text());
+                           }))
+
+                      })
+                    }
                 }
             }
             else {
@@ -154,6 +169,10 @@ function ajaxCall(query) {
             if (list) {
                 $("#chat-text").append(list);
             }
+            if(butDiv) {
+                $("#chat-text").append(butDiv).append($("<br><br><br><br>"));
+      
+              }
             $(answerdiv).focus();
 
             $("#message").focus();
