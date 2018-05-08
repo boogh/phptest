@@ -101,23 +101,23 @@ function ajaxCall(query) {
         data: { submit: true, message: query },
         success: function (response) {
             var obj = JSON.parse(response);
-
-            var answerdiv = jQuery('<div/>', {
-                html: obj.result.fulfillment.speech.linkify() + '&nbsp;',
-                'class': "rounded-div-bot",
-                tabindex: 1
-            });
+            var answerdiv;
+            // var answerdiv = jQuery('<div/>', {
+            //     html: obj.result.fulfillment.speech.linkify() + '&nbsp;',
+            //     'class': "rounded-div-bot",
+            //     tabindex: 1
+            // });
             var messages = obj.result.fulfillment.messages;
-            if (messages) {
+            if (messages.length > 1) {
                 for (i in messages) {
-
-                    if (messages[i].type == "simple_response" & messages[i].textToSpeach) {
-                        console.log(" Here are messages: " + messages[i].textToSpeach)
+                    if (messages[i].type == "simple_response") {
+                        console.log(" Here are messages: " + messages[i].textToSpeech)
                         answerdiv = jQuery('<div/>', {
-                            html: messages[i].textToSpeach.linkify() + '&nbsp;',
+                            html: messages[i].textToSpeech.linkify() + '&nbsp;',
                             'class': "rounded-div-bot",
                             tabindex: 1
                         });
+                        console.log("Answer Type 1") 
                     }
                     var list;
                     if (messages[i].type == "list_card") {
@@ -147,7 +147,7 @@ function ajaxCall(query) {
                     'class': "rounded-div-bot",
                     tabindex:1
                 });
-                console.log("not working")
+                console.log("type 0")
             }
 
             $("#chat-text").append(answerdiv).append($("<br><br><br><br><br>"));
