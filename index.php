@@ -12,21 +12,21 @@
     <script src="js/chatbot.js"></script>
 
 </head>
-<body>
-<div class="container-fluid">  
-    <div class= "row">
-     <div class="topstrip col-sm-12" id="topstrip">Powered by <a href="https://www.pwc.de/" style="color:#d3d3d3">PwC.DE</a>&nbsp;&nbsp;&nbsp;</div>
-    </div>
+<body class="container-fluid">
+<!-- <div class="container-fluid">   -->
+    <!-- <div class= "row"> -->
+    <div class="topstrip col-sm-10" id="topstrip">PoC Chatbot&nbsp;&nbsp;&nbsp;</div>
+    <!-- </div> -->
     
-    <div class= "row" data-spy= "scroll">
-             <div class="col-sm-12" > 
+    <!-- <div class= "row" data-spy= "scroll"> -->
+             <!-- <div class="col-sm-10" >  -->
                 <div class="topbar " id="chat-text">
                 </div> 
-             </div>
-     </div>
+             <!-- </div> -->
+     <!-- </div> -->
     
-     <div class= "row">
-         <div class "col-sm-12"> 
+     <!-- <div class= "row"> -->
+         <!-- <div class "col-sm-12">  -->
               <form>
                  <span style="width:100%;">
                  <input class="inputbox" 
@@ -34,8 +34,8 @@
                   </span>
                  <input name="submit" type="hidden" value="Submit">
                 </form>
-         </div>
-   </div>
- </div>
+         <!-- </div> -->
+   <!-- </div> -->
+ <!-- </div> -->
 </body>
 </html>

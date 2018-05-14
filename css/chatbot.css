@@ -1,63 +1,24 @@
-/* .topstrip{
-    width:99%;
-    overflow-y: scroll;
-    position:fixed;
-    top:0px;
-    height:50px;
-    background-color: black;
-    color:white;
-    text-align: right;
-    font-size: 16px;
-    font-family: Georgia;
-}
-.topbar{
-    display:block;
-    width:100%;
-    overflow-y: scroll;
-    position:fixed;
-    top:50px;
-    bottom:65px;
-}
-.rounded-div-bot{
-    display:block;
-    width:80%;
-    border-radius: 5px;
-    border:solid 1px black;
-    background-color: lightgreen;
-    float:right;
-    margin: 10px;
-    padding:5px;
-    min-height: 1em;
-}
-.rounded-div{
-    display:block;
-    width:80%;
-    border-radius: 5px;
-    margin: 10px;
-    padding:5px;
-    border:solid 1px black;
-    background-color: lightgray;
-    float:left;
-}
-.inputbox{
-    outline:none;
-    width:98%;
-    height:30px;
-    position: fixed;
-    bottom:25px;
-} */
 
+body {
+    background-color: #edeff2;
+    font-family: "Calibri", "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 450;
+  }
+  
 .topstrip{
-    width:99%;
-    overflow-y: scroll;
+    width:95%;
+    margin-left:10px;
+    /* overflow-y: scroll; */
     position:fixed;
     top:0px;
     height:50px;
-    background-color: black;
+    background-color: #9ca5fa;
     color:white;
-    text-align: right;
-    font-size: 16px;
+    text-align: center;
+    font-size: 20px;
     font-family: Georgia;
+    border-radius: 10px;
 }
 .topbar{
     display:block;
@@ -71,8 +32,7 @@
     display:block;
     width:80%;
     border-radius: 5px;
-    border:solid 1px black;
-    background-color: lightgreen;
+    background-color: rgb(207, 226, 169);
     float:right;
     margin: 10px;
     padding:5px;
@@ -84,16 +44,20 @@
     border-radius: 5px;
     margin: 10px;
     padding:5px;
-    border:solid 1px black;
     background-color: lightgray;
     float:left;
 }
 .inputbox{
-    outline:none;
-    width:98%;
+    /* outline:; */
+    width:95%;
     height:30px;
     position: fixed;
     bottom:25px;
+    font-weight: 350;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: solid 2px #9ca5fa ; 
+    padding: 5px;
 }
 .list-group-item-css{
     background-color: rgb(207, 226, 169);
