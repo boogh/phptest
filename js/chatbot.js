@@ -61,7 +61,8 @@ function ajaxCall(query) {
             var obj = JSON.parse(response);
             var answerdiv;
             var messages = obj.result.fulfillment.messages;
-            if (messages.length > 1) {
+            var ans = false;
+            if (messages) {
                 for (i in messages) {
                     if (messages[i].type == "simple_response") {
                         console.log(" Here are messages: " + messages[i].textToSpeech)
@@ -70,7 +71,17 @@ function ajaxCall(query) {
                             'class': "rounded-div-bot",
                             tabindex: 1
                         });
-                        console.log("Answer Type 1") 
+                        console.log("Answer Type 1")
+                        ans = true; 
+                    }
+                    if (!ans & (messages[i].type == 0 || messages[i].type == 0.0)) {
+                        console.log(" Here are messages: " + messages[i].speech)
+                        answerdiv = jQuery('<div/>', {
+                            html: messages[i].speech + '&nbsp;',
+                            'class': "rounded-div-bot",
+                            tabindex: 1
+                        });
+                        console.log("Answer Type 0") 
                     }
                     var list;
                     if (messages[i].type == "list_card") {
@@ -104,15 +115,33 @@ function ajaxCall(query) {
 
                       })
                     }
+
+                    // var butDiv2;
+                    if(messages[i].type == 2.0  || messages[i].type == 2) {
+                      butDiv = $("<div></div>").addClass("col-xs-6 col-xs-offset-3 pull-right");
+                     $.each(messages[i].replies , function(index , value) {
+                        console.log("buttons are " + value)
+                       butDiv.append($("<button></button>")
+                        .addClass("btn btn-md btn-success")
+                        .text(value)
+                        .click(function(){
+                         console.log($(this).text());
+                         showUserText2($(this).text());
+                          }))
+
+                     })
+                  }
+
+
                 }
             }
-            else {
-                answerdiv = jQuery('<div/>', {
-                    html: obj.result.fulfillment.speech+'&nbsp;',
-                    'class': "rounded-div-bot",
-                    tabindex:1
-                });
-            }
+            // else {
+            //     answerdiv = jQuery('<div/>', {
+            //         html: obj.result.fulfillment.speech+'&nbsp;',
+            //         'class': "rounded-div-bot",
+            //         tabindex:1
+            //     });
+            // }
    
             // setTimeout(function(){
                 $("#chat-text").delay(1000).append(answerdiv).append($("<br><br><br><br><br>"));
