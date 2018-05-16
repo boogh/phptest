@@ -66,7 +66,7 @@ function ajaxCall(query) {
                     if (messages[i].type == "simple_response") {
                         console.log(" Here are messages: " + messages[i].textToSpeech)
                         answerdiv = jQuery('<div/>', {
-                            html: messages[i].textToSpeech.linkify() + '&nbsp;',
+                            html: messages[i].textToSpeech + '&nbsp;',
                             'class': "rounded-div-bot",
                             tabindex: 1
                         });
@@ -75,7 +75,8 @@ function ajaxCall(query) {
                     var list;
                     if (messages[i].type == "list_card") {
                         // var list;
-                        list = $("<div></div>").append($("<ul></ul>").addClass("list-group")).addClass("col-xs-4 pull-right");
+                        list = $("<div></div>").append($("<ul></ul>").addClass("list-group"))
+                        .addClass("col-xs-4 pull-right scrolllist");
                         for (j in messages[i].items) {
                             list.append($("<a> </a>")
                                 .addClass("list-group-item list-group-item-css")
@@ -107,7 +108,7 @@ function ajaxCall(query) {
             }
             else {
                 answerdiv = jQuery('<div/>', {
-                    html: obj.result.fulfillment.speech.linkify()+'&nbsp;',
+                    html: obj.result.fulfillment.speech+'&nbsp;',
                     'class': "rounded-div-bot",
                     tabindex:1
                 });

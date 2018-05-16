@@ -65,3 +65,7 @@ body {
     padding: 5px;
     border-radius: 10px;
 }
+.scrolllist{
+    height: 200px ;
+    overflow-y: scroll;
+}
